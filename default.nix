@@ -1,11 +1,13 @@
 # https://discourse.nixos.org/t/solved-help-with-nix-build-and-cmake-no-rule-to-make-target-install/67174
 
 {
-  pkgs ? import <nixpkgs> {
+
+   nixpkgs ? ./nix/pinned.nix
+
+,  pkgs ? import <nixpkgs> {
 
     # NOTE: Uncomment to build for aarch
-
-    # crossSystem = { config = "aarch64-unknown-linux-musl"; };
+    crossSystem = { config = "aarch64-unknown-linux-musl"; };
 
   }
 }:
